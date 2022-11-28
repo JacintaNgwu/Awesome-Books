@@ -1,13 +1,4 @@
 
-/*
-let bookList = [
-  {title: 'Loreum ipsum',
-  author: 'Testeroo Testyy'},
-  {title: 'Second Book',
-  author: 'Testeroo Testyy'}
-];
-**/
-
 let bookList = [{
   Title: '',
   Author: ''
@@ -19,7 +10,7 @@ const bookListDiv = document.getElementById('book-list');
 
 function showBookList () {
   document.getElementById('book-list').innerHTML = '';
-  
+
   if (localStorage.getItem('bookList') !== null) {
     bookList = JSON.parse(localStorage.getItem('bookList'));
     bookList.forEach((book) => {
@@ -42,7 +33,6 @@ function showBookList () {
   }
 }
 
-
 document.getElementById('add_book_btn').addEventListener('click', () => {
   const book = {
     Title: '',
@@ -58,6 +48,12 @@ document.getElementById('add_book_btn').addEventListener('click', () => {
   showBookList ();
 });
 
+
 window.addEventListener('load', () => {
   showBookList ();
 });
+/*
+document.querySelector('.remove-book').addEventListener('click', () => {
+  bookList.pop();
+});
+*/
