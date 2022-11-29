@@ -2,3 +2,12 @@
 body {
   color: #000;
 }
+
+.book-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.space {
+  margin-bottom: 10px;
+}
