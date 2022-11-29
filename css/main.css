@@ -49,3 +49,40 @@ body {
 .title {
   margin-right: 5px;
 }
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+hr {
+  width: 30%;
+  height: 3px;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.text-size {
+  width: 355px;
+  height: 30px;
+}
+
+.text-size input {
+  padding: 3px;
+}
+
+.btnSize {
+  width: 70px;
+  height: 25px;
+  float: right;
+}
