@@ -73,7 +73,7 @@ class BookList {
       if (current.title === title && current.author === author) {
         return count;
       }
-      count++;
+      count += 1;
       current = current.next;
     }
     return -1;
@@ -90,7 +90,7 @@ class BookList {
     let i = 0;
 
     while (i < index) {
-      i++;
+      i += 1;
       previous = current;
       current = current.next;
     }
@@ -164,7 +164,6 @@ const upsellBtn = document.getElementById('book-list');
 
 upsellBtn.addEventListener('click', (event) => {
   const bookCurrent = event.target.closest('.book');
-  // const bookCurrent = event.target.closest('.remove-book-btn');
   if (bookCurrent) {
     const nodelist = bookCurrent.childNodes;
     const [title, author] = nodelist;
