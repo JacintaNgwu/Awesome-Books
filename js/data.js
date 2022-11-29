@@ -54,17 +54,12 @@ class BookList {
 
   getList() {
     let current = this.head;
-
-    const book = {};
-    const bookList = [];
-
+    let str = '';
     while (current) {
-      book.Title = current.title;
-      book.Author = current.author;
+      str += `${current.title} `;
       current = current.next;
-      bookList.push(book);
     }
-    return bookList;
+    return str;
   }
 
   indexOf(title, author) {
@@ -100,13 +95,14 @@ class BookList {
   }
 }
 
-const newBookList = new BookList();
+let newBookList = new BookList();
 
 function showBookList() {
   document.getElementById('book-list').innerHTML = '';
 
   if (localStorage.getItem('bookList') !== null) {
     const bookList = JSON.parse(localStorage.getItem('bookList'));
+    if (bookList === null) { return; }
     let book = bookList.head;
     while (book !== null) {
       const bookDiv = document.createElement('div');
@@ -147,17 +143,21 @@ document.getElementById('add_book_btn').addEventListener('click', () => {
 
 function storeInClass() {
   const bookList = JSON.parse(localStorage.getItem('bookList'));
+
   if (bookList !== null) {
     let book = bookList.head;
+
     if (book === undefined) { return; }
+    newBookList = new BookList();
     while (book !== null) {
-      newBookList.add(book.Title, book.Author);
+      newBookList.add(book.title, book.author);
       book = book.next;
     }
   }
 }
 
 window.addEventListener('load', () => {
+  /// localStorage.removeItem('bookList');
   showBookList();
   storeInClass();
 });
@@ -166,12 +166,13 @@ const upsellBtn = document.getElementById('book-list');
 
 upsellBtn.addEventListener('click', (event) => {
   const bookCurrent = event.target.closest('.book');
-  if (bookCurrent) {
+  if (bookCurrent !== null && bookCurrent !== undefined) {
     const nodelist = bookCurrent.childNodes;
     const [title, author] = nodelist;
     newBookList.remove(title.innerText, author.innerText);
     localStorage.removeItem('bookList');
     localStorage.setItem('bookList', JSON.stringify(newBookList));
+    storeInClass();
     showBookList();
   }
 });
