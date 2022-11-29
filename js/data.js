@@ -1,59 +1,44 @@
+let bookList = [];
 
-let bookList = [{
-  Title: '',
-  Author: ''
-}];
+const book = {};
 
-
-const addBookForm = document.getElementById('add_book_form');
-const bookListDiv = document.getElementById('book-list');
-
-function showBookList () {
+function showBookList() {
   document.getElementById('book-list').innerHTML = '';
 
   if (localStorage.getItem('bookList') !== null) {
     bookList = JSON.parse(localStorage.getItem('bookList'));
     bookList.forEach((book) => {
-
+      const bookDiv = document.createElement('div');
+      bookDiv.classList.add('book');
       const titleDiv = document.createElement('div');
-      titleDiv.id = 'title-div';
+      titleDiv.classList.add = 'title';
       titleDiv.innerText = book.Title;
-      document.getElementById('book-list').appendChild(titleDiv);
+      bookDiv.appendChild(titleDiv);
 
       const authorDiv = document.createElement('div');
-      authorDiv.id = 'author-div';
+      authorDiv.classList.add = 'author';
       authorDiv.innerText = book.Author;
-      document.getElementById('book-list').appendChild(authorDiv);
+      bookDiv.appendChild(authorDiv);
 
       const removeBtn = document.createElement('button');
-      removeBtn.classList.add('remove-book');
+      removeBtn.classList.add('remove-book-btn');
       removeBtn.innerText = 'Remove';
-      document.getElementById('book-list').appendChild(removeBtn);
+      bookDiv.appendChild(removeBtn);
+      document.getElementById('book-list').appendChild(bookDiv);
     });
   }
 }
 
 document.getElementById('add_book_btn').addEventListener('click', () => {
-  const book = {
-    Title: '',
-    Author: ''
-  };
-
   book.Title = document.getElementById('title').value;
   book.Author = document.getElementById('author').value;
 
   bookList.push(book);
 
   localStorage.setItem('bookList', JSON.stringify(bookList));
-  showBookList ();
+  showBookList();
 });
-
 
 window.addEventListener('load', () => {
-  showBookList ();
+  showBookList();
 });
-/*
-document.querySelector('.remove-book').addEventListener('click', () => {
-  bookList.pop();
-});
-*/

@@ -5,19 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awesome Books</title>
+  <link rel="stylesheet" href="./css/main.css">\docs\user-guide\hints\hint-html-checker\
 </head>
 <body>
   <h1>Awesome Books</h1>
   <div>
-    <div id="book-list">
-
+    <div id="book-list" class="booklist">
     </div>   
-    
   </div>
   <form id="add_book_form">
-    <input type="text" id="title" name="title" placeholder="Title" required />
-    <input type="text" id="author" name="author" placeholder="Author" required />
-    <button type="button" id="add_book_btn">Add</button>
+      <input type="text" id="title" name="title" placeholder="Title" required />
+    </div>
+    <div>
+      <input type="text" id="author" name="author" placeholder="Author" required />
+    </div>
+    <div>
+      <button type="button" id="add_book_btn">Add</button>
+    </div>    
   </form>
   <script src="./js/data.js"></script>
 </body>
