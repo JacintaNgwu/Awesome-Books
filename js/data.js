@@ -11,22 +11,25 @@ function showBookList() {
       const bookDiv = document.createElement('div');
       bookDiv.classList.add('book');
       const titleDiv = document.createElement('div');
-      titleDiv.classList.add = 'title';
+      titleDiv.classList.add('title');
       titleDiv.innerText = book.Title;
       bookDiv.appendChild(titleDiv);
 
       const authorDiv = document.createElement('div');
-      authorDiv.classList.add = 'author';
+      authorDiv.classList.add('author');
       authorDiv.innerText = book.Author;
       bookDiv.appendChild(authorDiv);
 
       const removeBtn = document.createElement('button');
       removeBtn.classList.add('remove-book-btn');
       removeBtn.innerText = 'Remove';
-      bookDiv.appendChild(removeBtn);
-      const hr = document.createElement('hr');
-      hr.classList.add('hr-line');
-      bookDiv.appendChild(hr);
+      const btnDiv = document.createElement('div');
+      btnDiv.classList.add('btn-wrap');
+      btnDiv.appendChild(removeBtn);
+      bookDiv.appendChild(btnDiv);
+      // const hr = document.createElement('hr');
+      // hr.classList.add('hr-line');
+      // bookDiv.appendChild(hr);
       document.getElementById('book-list').appendChild(bookDiv);
     });
   }
