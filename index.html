@@ -9,25 +9,25 @@
 </head>
 <body>
   <div class="book-container">
-  <h1>All awesome books</h1>
-  <div>
-    <div id="book-list" class="booklist">
-    </div>   
+    <h1>All awesome books</h1>
+    <div>
+      <div id="book-list" class="booklist">
+      </div>   
+    </div>
+    <hr>
+    <h2>Add a new book</h2>
+    <form id="add_book_form">
+      <div class="space">
+        <input class ="text-size" type="text" id="title" name="title" placeholder="Title" required />
+      </div>
+      <div class="space">
+        <input class ="text-size" type="text" id="author" name="author" placeholder="Author" required />
+      </div>
+      <div class="space text-size">
+        <button class="btnSize" type="button" id="add_book_btn">Add</button>
+      </div>    
+    </form>
   </div>
-  <hr>
-  <h2>Add a new book</h2>
-  <form id="add_book_form">
-    <div class="space">
-      <input class ="text-size" type="text" id="title" name="title" placeholder="Title" required />
-    </div>
-    <div class="space">
-      <input class ="text-size" type="text" id="author" name="author" placeholder="Author" required />
-    </div>
-    <div class="space text-size">
-      <button class="btnSize" type="button" id="add_book_btn">Add</button>
-    </div>    
-  </form>
-</div>
   <script src="./js/data.js"></script>
 </body>
 </html>
