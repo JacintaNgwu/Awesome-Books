@@ -24,6 +24,9 @@ function showBookList() {
       removeBtn.classList.add('remove-book-btn');
       removeBtn.innerText = 'Remove';
       bookDiv.appendChild(removeBtn);
+      const hr = document.createElement('hr');
+      hr.classList.add('hr-line');
+      bookDiv.appendChild(hr);
       document.getElementById('book-list').appendChild(bookDiv);
     });
   }
@@ -47,10 +50,10 @@ const upsellBtn = document.getElementById('book-list');
 
 upsellBtn.addEventListener('click', (event) => {
   const bookCurrent = event.target.closest('.remove-book-btn');
-  if(bookCurrent){
+  if (bookCurrent) {
     const nodelist = bookCurrent.childNodes;
-    const [title, author, ...tail] = nodelist;
-    bookList.splice(bookList.findIndex(search => search.Title === title.innerText), 1);
+    const [title] = nodelist;
+    bookList.splice(bookList.findIndex((search) => search.Title === title.innerText), 1);
 
     localStorage.removeItem('bookList');
     localStorage.setItem('bookList', JSON.stringify(bookList));
