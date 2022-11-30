@@ -176,3 +176,26 @@ upsellBtn.addEventListener('click', (event) => {
     showBookList();
   }
 });
+
+const listItemLink = document.querySelector('#list-item');
+const addItemLink = document.querySelector('#add-item');
+const contactItemLink = document.querySelector('#contact-item');
+
+addItemLink.addEventListener('click', () => {
+  document.getElementById('add-new-book').classList.remove('hide');
+  document.getElementById('book-container').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+});
+
+listItemLink.addEventListener('click', () => {
+  document.getElementById('book-container').classList.remove('hide');
+  document.getElementById('add-new-book').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+});
+
+contactItemLink.addEventListener('click', () => {
+  document.getElementById('contact').classList.remove('hide');
+  document.getElementById('book-container').classList.add('hide');
+  document.getElementById('add-new-book').classList.add('hide');
+});
+

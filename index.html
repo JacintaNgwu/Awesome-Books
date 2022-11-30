@@ -15,9 +15,9 @@
       </div>
       <div class="nav-links">
         <ul>
-          <li><a class="list" href="#">List</a></li>
-          <li><a class="list" href="#">Add new</a></li>
-          <li><a class="list" href="#">Contact</a></li>
+          <li><a id="list-item" class="list" href="#">List</a></li>
+          <li><a id="add-item" class="list" href="#">Add new</a></li>
+          <li><a id="contact-item" class="list" href="#">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -25,16 +25,16 @@
   </section>
 
   <section class="main">
-    <div class="book-container">
-      <h1>All awesome books</h1>
+    <div id="book-container" class="book-container">
+      <div><h1>All awesome books</h1></div>
       <div>
         <div id="book-list" class="booklist">
         </div>   
       </div>
     </div>
 
-    <div class="add-new-book hide">
-      <h1>Add a new book</h1>
+    <div id="add-new-book" class="add-new-book hide">
+      <div><h1>Add a new book</h1></div>
       <form id="add_book_form">
         <div class="space">
           <input class ="text-size" type="text" id="title" name="title" placeholder="Title" required />
@@ -48,8 +48,8 @@
       </form>
     </div>
 
-    <div class="contact hide">
-      <h1 class="contact-header">Contact information</h1>
+    <div id="contact" class="contact hide">
+      <div><h1 class="contact-header">Contact information</h1></div>
       <div class="contact-para">
         <p>Do you have any questions or you just want to say "Hello"?<br />
           you can reach out to us!</p>      
