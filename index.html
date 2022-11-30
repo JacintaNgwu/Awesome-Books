@@ -8,26 +8,64 @@
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-  <div class="book-container">
-    <h1>All awesome books</h1>
-    <div>
-      <div id="book-list" class="booklist">
-      </div>   
+  <section class="header">
+    <nav class="navbar">
+      <div class="logo">
+        Awesome Books
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a id="list-item" class="list" href="#">List</a></li>
+          <li><a id="add-item" class="list" href="#">Add new</a></li>
+          <li><a id="contact-item" class="list" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="current-date"></div>
+  </section>
+
+  <section class="main">
+    <div id="book-container" class="book-container">
+      <div><h1>All awesome books</h1></div>
+      <div>
+        <div id="book-list" class="booklist">
+        </div>   
+      </div>
     </div>
-    <hr>
-    <h2>Add a new book</h2>
-    <form id="add_book_form">
-      <div class="space">
-        <input class ="text-size" type="text" id="title" name="title" placeholder="Title" required />
+
+    <div id="add-new-book" class="add-new-book hide">
+      <div><h1>Add a new book</h1></div>
+      <form id="add_book_form">
+        <div class="space">
+          <input class ="text-size" type="text" id="title" name="title" placeholder="Title" required />
+        </div>
+        <div class="space">
+          <input class ="text-size" type="text" id="author" name="author" placeholder="Author" required />
+        </div>
+        <div class="space text-size">
+          <button class="btnSize" type="button" id="add_book_btn">Add</button>
+        </div>    
+      </form>
+    </div>
+
+    <div id="contact" class="contact hide">
+      <div><h1 class="contact-header">Contact information</h1></div>
+      <div class="contact-para">
+        <p>Do you have any questions or you just want to say "Hello"?<br />
+          you can reach out to us!</p>      
+        <ul class="contact-details">
+          <li class="detail-list">Our email: mail@gmail.com</li>
+          <li class="detail-list">Our phone number: 0043586530422</li>
+          <li class="detail-list">Our address: Street name 22, 484503 City, Country</li>
+        </ul>
       </div>
-      <div class="space">
-        <input class ="text-size" type="text" id="author" name="author" placeholder="Author" required />
-      </div>
-      <div class="space text-size">
-        <button class="btnSize" type="button" id="add_book_btn">Add</button>
-      </div>    
-    </form>
-  </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Copyright</div>
+  </footer>
+  
   <script src="./js/data.js"></script>
 </body>
 </html>
