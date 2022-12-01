@@ -156,10 +156,27 @@ function storeInClass() {
   }
 }
 
+function displayDate() {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  };
+  const date = new Date();
+  let str = date.toLocaleString('en-US', options);
+  str = str.replace(',', 'th');
+  str = str.replace('at', ',');
+
+  document.querySelector('.current-date').innerHTML = str;
+}
+
 window.addEventListener('load', () => {
-  /// localStorage.removeItem('bookList');
   showBookList();
   storeInClass();
+  displayDate();
 });
 
 const upsellBtn = document.getElementById('book-list');
@@ -175,4 +192,26 @@ upsellBtn.addEventListener('click', (event) => {
     storeInClass();
     showBookList();
   }
+});
+
+const listItemLink = document.querySelector('#list-item');
+const addItemLink = document.querySelector('#add-item');
+const contactItemLink = document.querySelector('#contact-item');
+
+addItemLink.addEventListener('click', () => {
+  document.getElementById('add-new-book').classList.remove('hide');
+  document.getElementById('book-container').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+});
+
+listItemLink.addEventListener('click', () => {
+  document.getElementById('book-container').classList.remove('hide');
+  document.getElementById('add-new-book').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+});
+
+contactItemLink.addEventListener('click', () => {
+  document.getElementById('contact').classList.remove('hide');
+  document.getElementById('book-container').classList.add('hide');
+  document.getElementById('add-new-book').classList.add('hide');
 });
