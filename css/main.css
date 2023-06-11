@@ -39,6 +39,10 @@ body {
 }
 
 .list:hover {
+  color: #fff;
+}
+
+.list:hover {
   color: #0977df;
 }
 
