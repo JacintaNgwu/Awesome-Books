@@ -38,7 +38,7 @@ body {
   padding: 0 10px;
 }
 
-.list:hover {
+a.list:hover {
   color: #fff;
 }
 
